@@ -34,6 +34,7 @@ ___author___: "Cheria Artis with help from Chris Warren"
 
 import re
 import argparse
+import sys
 
 def extract_names(filename):
     """
@@ -71,9 +72,11 @@ def create_parser():
         description="Extracts and alphabetizes baby names from html.")
     parser.add_argument(
         '--summaryfile', help='creates a summary file', action='store_true')
+    
     # The nargs option instructs the parser to expect 1 or more
     # filenames. It will also expand wildcards just like the shell.
     # e.g. 'baby*.html' will work.
+    
     parser.add_argument('files', help='filename(s) to parse', nargs='+')
     return parser
 
